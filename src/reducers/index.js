@@ -4,7 +4,6 @@ const book = (state, action) => {
   } = action;
   switch (type) {
     case 'CREATE_BOOK':
-      console.log('here');
       return {
         id,
         author,

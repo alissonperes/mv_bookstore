@@ -5,10 +5,11 @@ import BooksForm from '../containers/BooksForm';
 import './App.css';
 
 const App = props => {
-  const { books } = props.books;
+  const { books } = props;
+  const allBooks = books.books;
   return (
     <div className="App">
-      <BooksList books={books} />
+      <BooksList books={allBooks} />
       <BooksForm />
     </div>
   );
