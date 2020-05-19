@@ -5,6 +5,7 @@ import './Book.css';
 const Book = props => {
   const { book } = props;
   const { id, author, category } = book;
+
   return (
     <tr>
       <td>{id}</td>

@@ -1,30 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './BooksList.css';
-import Book from './Book';
+import Book from '../components/Book';
 
-const BooksList = () => {
-  const books = [
-    {
-      id: 1,
-      author: 'Alisson',
-      category: 'Horror',
-    },
-    {
-      id: 2,
-      author: 'Author1',
-      category: 'Action',
-    },
-    {
-      id: 3,
-      author: 'Author2',
-      category: 'Romance',
-    },
-    {
-      id: 4,
-      author: 'Author3',
-      category: 'Horror',
-    },
-  ];
+const BooksList = props => {
+  const { books } = props;
 
   return (
     <div className="BooksList">
@@ -44,6 +24,14 @@ const BooksList = () => {
       </table>
     </div>
   );
+};
+
+BooksList.defaultProps = {
+  books: [],
+};
+
+BooksList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape()),
 };
 
 export default BooksList;
