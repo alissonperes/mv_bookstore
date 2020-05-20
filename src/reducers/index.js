@@ -1,7 +1,6 @@
-const book = (state, action) => {
-  const {
-    id, author, category, type,
-  } = action;
+const book = (state = [], action) => {
+  const { id, author, category } = action.book;
+  const { type } = action;
   switch (type) {
     case 'CREATE_BOOK':
       return {

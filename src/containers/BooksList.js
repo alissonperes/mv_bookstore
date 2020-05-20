@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux'; /* code change */
+import { connect } from 'react-redux';
 import './BooksList.css';
 import Book from '../components/Book';
 
