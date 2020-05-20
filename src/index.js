@@ -6,19 +6,24 @@ import './index.css';
 import App from './components/App';
 import books from './reducers/books';
 
-// const get = () => localStorage.getItem('books');
-// const set = books => localStorage.setItem('Books', JSON.stringify(books));
+const get = () => JSON.parse(localStorage.getItem('Books'));
+const set = books => localStorage.setItem('Books', JSON.stringify(books));
 
-const defaultBooks = {
-  books: [
-    { id: Math.floor(Math.random() * Math.floor(40)), author: 'Author0', category: 'Horror' },
-    { id: Math.floor(Math.random() * Math.floor(40)), author: 'Author1', category: 'Horror' },
-  ],
+const library = () => {
+  if (get()) {
+    return get();
+  }
+  const defaultBooks = {
+    books: [
+      { id: Math.floor(Math.random() * Math.floor(40)), author: 'Author0', category: 'Horror' },
+      { id: Math.floor(Math.random() * Math.floor(40)), author: 'Author1', category: 'Horror' },
+    ],
+  };
+  set(defaultBooks);
+  return defaultBooks;
 };
 
-const store = createStore(books, defaultBooks);
-
-// get() || set(store.getState());
+const store = createStore(books, library());
 
 document.title = 'Magicians books';
 

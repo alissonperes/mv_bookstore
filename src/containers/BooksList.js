@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux'; /* code change */
 import './BooksList.css';
 import Book from '../components/Book';
 
@@ -34,4 +35,6 @@ BooksList.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape()),
 };
 
-export default BooksList;
+const mapStateToProps = state => ({ books: state.books });
+
+export default connect(mapStateToProps)(BooksList);
