@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions/index';
 import './BooksForm.css';
@@ -8,6 +9,7 @@ class BooksForm extends React.Component {
     super(props);
 
     this.state = {
+      id: this.props.books.length + 1, // eslint-disable-line
       author: '',
       category: '',
     };
@@ -18,13 +20,14 @@ class BooksForm extends React.Component {
 
   addBook(e) {
     e.preventDefault();
-    const { books } = this.props;
-    const { author, category } = this.state;
+    const { id, author, category } = this.state;
     const newBook = {
-      id: books.length + 1,
+      id,
       author,
       category,
     };
+
+    this.setState(prevState => ({ id: prevState.id + 1 }));
     this.props.saveBook(newBook); // eslint-disable-line
     e.target.reset();
   }
@@ -62,11 +65,17 @@ class BooksForm extends React.Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    saveBook: book => dispatch(createBook(book)),
-  };
-}
+const mapDispatchToProps = dispatch => ({
+  saveBook: book => dispatch(createBook(book)),
+});
+
+BooksForm.defaultProps = {
+  books: [],
+};
+
+BooksForm.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.shape()),
+};
 
 const mapStateToProps = state => ({ books: state.books });
 

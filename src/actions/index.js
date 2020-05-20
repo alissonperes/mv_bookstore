@@ -1,8 +1,7 @@
 const createBook = book => ({ type: 'CREATE_BOOK', book });
 
-const removeBook = (book, index) => ({
+const removeBook = index => ({
   type: 'REMOVE_BOOK',
-  book,
   index,
 });
 

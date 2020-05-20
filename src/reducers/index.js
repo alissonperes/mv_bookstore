@@ -1,15 +1,16 @@
 const book = (state = [], action) => {
-  const { id, author, category } = action.book;
   const { type } = action;
+
   switch (type) {
     case 'CREATE_BOOK':
+      const { id, author, category } = action.book;
       return {
         id,
         author,
         category,
       };
     case 'REMOVE_BOOK':
-      return [...state.slice(0, action.index), ...state(action.index + 1, state.length)];
+      return state.filter(x => x.id !== action.index);
     default:
       return state;
   }
