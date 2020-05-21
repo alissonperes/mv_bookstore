@@ -11,6 +11,7 @@ const defaultBooks = {
     { id: 1, author: 'Author0', category: 'Horror' },
     { id: 2, author: 'Author1', category: 'Horror' },
   ],
+  filter: 'ALL',
 };
 
 const store = createStore(books, defaultBooks);
