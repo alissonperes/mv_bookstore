@@ -11,6 +11,7 @@ const Book = props => {
       <td>{id}</td>
       <td>{author}</td>
       <td>{category}</td>
+      <td onClick={() => props.onClick(id)}>X</td>
     </tr>
   );
 };
@@ -20,7 +21,9 @@ Book.propTypes = {
     id: PropTypes.number,
     author: PropTypes.string,
     category: PropTypes.string,
+    removeBook: PropTypes.func.isRequired,
   }).isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Book;
