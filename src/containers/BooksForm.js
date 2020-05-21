@@ -14,11 +14,11 @@ class BooksForm extends React.Component {
       category: '',
     };
 
-    this.addBook = this.addBook.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  addBook(e) {
+  handleSubmit(e) {
     e.preventDefault();
     const { id, author, category } = this.state;
     const newBook = {
@@ -50,7 +50,7 @@ class BooksForm extends React.Component {
       'Sci-Fi',
     ];
     return (
-      <form onSubmit={this.addBook} id="add-book-form">
+      <form onSubmit={this.handleSubmit} id="add-book-form">
         <input type="text" name="author" onChange={this.handleChange} required />
         <select id="category" name="category" onChange={this.handleChange} required>
           {categories.map(cat => (
