@@ -21,7 +21,6 @@ Book.propTypes = {
     id: PropTypes.number,
     author: PropTypes.string,
     category: PropTypes.string,
-    removeBook: PropTypes.func.isRequired,
   }).isRequired,
   onClick: PropTypes.func.isRequired,
 };

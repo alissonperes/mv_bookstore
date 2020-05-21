@@ -77,6 +77,6 @@ BooksForm.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape()),
 };
 
-const mapStateToProps = state => ({ books: state.books });
+const mapStateToProps = state => ({ books: state.books, filter: state.filter });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);

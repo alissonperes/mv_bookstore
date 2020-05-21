@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import './index.css';
 import App from './components/App';
-import books from './reducers/books';
+import books from './reducers/index';
 
 const defaultBooks = {
   books: [
