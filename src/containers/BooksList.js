@@ -10,7 +10,7 @@ const BooksList = props => {
   const { books, filter } = props;
   const displayBooks = filter === 'ALL'
     ? books.map(x => <Book key={x.id} book={x} onClick={props.removeBook} />)
-    : books.map(x => {
+    : books.map(x => { // eslint-disable-line
       if (x.category === filter) {
         return <Book key={x.id} book={x} onClick={props.removeBook} />;
       }
