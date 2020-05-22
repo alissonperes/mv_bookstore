@@ -25,7 +25,7 @@ const BooksList = props => {
   return (
     <div className="BooksList">
       <CategoryFilter handleChange={handleFilterChange} />
-      <table className="books-table">
+      <table id="books-table">
         <thead>
           <tr>
             <th>BookID</th>

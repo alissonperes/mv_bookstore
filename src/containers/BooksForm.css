@@ -1,0 +1,48 @@
+.book-form {
+  width: 85vw;
+  margin: 0 auto;
+  padding-bottom: 265px;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-form span {
+  text-transform: uppercase;
+  margin-bottom: 19px;
+}
+
+#add-book-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+#category {
+  min-width: 185px;
+  max-width: 285px;
+  height: 45px;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #ffffff;
+}
+
+.form-item {
+  flex-grow: 1;
+}
+
+button.form-item {
+  max-width: 184px;
+  height: 45px;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+}
+
+#category option:first-child {
+  color: #3c3c3c;
+}
