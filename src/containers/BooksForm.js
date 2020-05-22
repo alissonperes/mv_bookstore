@@ -10,20 +10,20 @@ class BooksForm extends React.Component {
 
     this.state = {
       id: this.props.books.length + 1, // eslint-disable-line
-      author: '',
+      title: '',
       category: '',
     };
 
-    this.addBook = this.addBook.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
 
-  addBook(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    const { id, author, category } = this.state;
+    const { id, title, category } = this.state;
     const newBook = {
       id,
-      author,
+      title,
       category,
     };
 
@@ -50,8 +50,8 @@ class BooksForm extends React.Component {
       'Sci-Fi',
     ];
     return (
-      <form onSubmit={this.addBook} id="add-book-form">
-        <input type="text" name="author" onChange={this.handleChange} required />
+      <form onSubmit={this.handleSubmit} id="add-book-form">
+        <input type="text" name="title" onChange={this.handleChange} required />
         <select id="category" name="category" onChange={this.handleChange} required>
           {categories.map(cat => (
             <option key={cat} value={cat}>
@@ -77,6 +77,6 @@ BooksForm.propTypes = {
   books: PropTypes.arrayOf(PropTypes.shape()),
 };
 
-const mapStateToProps = state => ({ books: state.books });
+const mapStateToProps = state => ({ books: state.books, filter: state.filter });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BooksForm);
