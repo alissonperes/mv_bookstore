@@ -8,13 +8,15 @@ import Book from '../components/Book';
 
 const BooksList = props => {
   const { books, filter } = props;
-  const displayBooks = filter === 'ALL'
-    ? books.map(x => <Book key={x.id} book={x} onClick={props.removeBook} />)
-    : books.map(x => { // eslint-disable-line
-      if (x.category === filter) {
-        return <Book key={x.id} book={x} onClick={props.removeBook} />;
-      }
-    });
+  const allBooks = [];
+
+  if (filter === 'ALL') {
+    books.map(x => allBooks.push(<Book key={x.id} book={x} onClick={props.removeBook} />));
+  } else {
+    books
+      .filter(x => x.category === filter)
+      .forEach(y => allBooks.push(<Book key={y.id} book={y} onClick={props.removeBook} />));
+  }
 
   const handleFilterChange = e => {
     props.changeFilter(e.target.value);
@@ -27,11 +29,11 @@ const BooksList = props => {
         <thead>
           <tr>
             <th>BookID</th>
-            <th>Author</th>
+            <th>Title</th>
             <th>Category</th>
           </tr>
         </thead>
-        <tbody>{displayBooks}</tbody>
+        <tbody>{allBooks}</tbody>
       </table>
     </div>
   );

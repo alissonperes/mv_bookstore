@@ -7,7 +7,7 @@ const books = (state = initialState, action) => {
         ...state,
         {
           id: action.book.id,
-          author: action.book.author,
+          title: action.book.title,
           category: action.book.category,
         },
       ];

@@ -10,7 +10,7 @@ class BooksForm extends React.Component {
 
     this.state = {
       id: this.props.books.length + 1, // eslint-disable-line
-      author: '',
+      title: '',
       category: '',
     };
 
@@ -20,10 +20,10 @@ class BooksForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const { id, author, category } = this.state;
+    const { id, title, category } = this.state;
     const newBook = {
       id,
-      author,
+      title,
       category,
     };
 
@@ -51,7 +51,7 @@ class BooksForm extends React.Component {
     ];
     return (
       <form onSubmit={this.handleSubmit} id="add-book-form">
-        <input type="text" name="author" onChange={this.handleChange} required />
+        <input type="text" name="title" onChange={this.handleChange} required />
         <select id="category" name="category" onChange={this.handleChange} required>
           {categories.map(cat => (
             <option key={cat} value={cat}>
