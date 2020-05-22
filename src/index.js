@@ -8,15 +8,15 @@ import books from './reducers/index';
 
 const defaultBooks = {
   books: [
-    { id: 1, title: 'Author0', category: 'Action' },
-    { id: 2, title: 'Author1', category: 'Biography' },
-    { id: 3, title: 'Author2', category: 'History' },
-    { id: 4, title: 'Author3', category: 'Horror' },
-    { id: 5, title: 'Author4', category: 'Kids' },
-    { id: 6, title: 'Author5', category: 'Learning' },
-    { id: 7, title: 'Author6', category: 'Sci-Fi' },
+    { id: 1, title: 'Title 0', category: 'Action' },
+    { id: 2, title: 'Title 1', category: 'Biography' },
+    { id: 3, title: 'Title 2', category: 'History' },
+    { id: 4, title: 'Title 3', category: 'Horror' },
+    { id: 5, title: 'Title 4', category: 'Kids' },
+    { id: 6, title: 'Title 5', category: 'Learning' },
+    { id: 7, title: 'Title 6', category: 'Sci-Fi' },
   ],
-  filter: 'ALL',
+  filter: 'Categories',
 };
 
 const store = createStore(books, defaultBooks);

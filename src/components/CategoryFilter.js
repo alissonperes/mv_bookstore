@@ -4,7 +4,7 @@ import './CategoryFilter.css';
 
 const CategoryFilter = props => {
   const categories = [
-    'ALL',
+    'Categories',
     'Action',
     'Biography',
     'History',
@@ -14,13 +14,23 @@ const CategoryFilter = props => {
     'Sci-Fi',
   ];
   return (
-    <select id="category" name="filter" onChange={e => props.handleChange(e)} required>
-      {categories.map(cat => (
-        <option key={cat} value={cat}>
-          {cat}
-        </option>
-      ))}
-    </select>
+    <div className="header">
+      <span>BookStore CMS</span>
+      <ul className="nav-list">
+        <li key="categoey" className="nav-item">
+          <p>Books</p>
+        </li>
+        <li className="nav-item">
+          <select id="category" name="filter" onChange={e => props.handleChange(e)} required>
+            {categories.map(cat => (
+              <option key={cat} value={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+        </li>
+      </ul>
+    </div>
   );
 };
 
