@@ -4,12 +4,12 @@ import './Book.css';
 
 const Book = props => {
   const { book } = props;
-  const { id, author, category } = book;
+  const { id, title, category } = book;
 
   return (
     <tr>
       <td>{id}</td>
-      <td>{author}</td>
+      <td>{title}</td>
       <td>{category}</td>
       <td onClick={() => props.onClick(id)}>X</td>
     </tr>
@@ -19,7 +19,7 @@ const Book = props => {
 Book.propTypes = {
   book: PropTypes.shape({
     id: PropTypes.number,
-    author: PropTypes.string,
+    title: PropTypes.string,
     category: PropTypes.string,
   }).isRequired,
   onClick: PropTypes.func.isRequired,
