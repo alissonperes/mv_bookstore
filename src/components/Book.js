@@ -7,11 +7,12 @@ const Book = props => {
   const { id, title, category } = book;
 
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td onClick={() => props.onClick(id)}>X</td>
+    <tr className="book-item">
+      <td className="book-title">{title}</td>
+      <td className="book-category">{category}</td>
+      <td className="book-remove" onClick={() => props.onClick(id)}>
+        <span>Remove</span>
+      </td>
     </tr>
   );
 };

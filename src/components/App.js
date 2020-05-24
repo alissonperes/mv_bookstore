@@ -6,6 +6,7 @@ import './App.css';
 const App = () => (
   <div className="App">
     <BooksList />
+    <hr className="page-dividor" />
     <BooksForm />
   </div>
 );

@@ -10,7 +10,7 @@ const BooksList = props => {
   const { books, filter } = props;
   const allBooks = [];
 
-  if (filter === 'ALL') {
+  if (filter === 'Categories') {
     books.map(x => allBooks.push(<Book key={x.id} book={x} onClick={props.removeBook} />));
   } else {
     books
@@ -25,7 +25,7 @@ const BooksList = props => {
   return (
     <div className="BooksList">
       <CategoryFilter handleChange={handleFilterChange} />
-      <table>
+      <table id="books-table">
         <thead>
           <tr>
             <th>BookID</th>
