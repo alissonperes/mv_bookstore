@@ -16,6 +16,18 @@
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 600px) {
+  #add-book-form {
+    flex-direction: column;
+  }
+
+  #category {
+    max-width: 100% !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
 #category {
   min-width: 185px;
   max-width: 285px;

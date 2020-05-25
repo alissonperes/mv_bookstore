@@ -20,6 +20,15 @@
   white-space: nowrap;
 }
 
+@media only screen and (max-width: 600px) {
+  .header {
+    flex-direction: column;
+  }
+  .header span {
+    padding-left: 0;
+  }
+}
+
 .nav-list {
   align-items: center;
   display: flex;

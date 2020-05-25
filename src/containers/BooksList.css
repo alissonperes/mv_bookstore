@@ -7,3 +7,9 @@
 #books-table thead {
   display: none;
 }
+
+@media only screen and (max-width: 500px) {
+  #books-table {
+    width: 100%;
+  }
+}

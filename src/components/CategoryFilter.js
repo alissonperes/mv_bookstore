@@ -17,7 +17,7 @@ const CategoryFilter = props => {
     <div className="header">
       <span>BookStore CMS</span>
       <ul className="nav-list">
-        <li key="categoey" className="nav-item">
+        <li key="category" className="nav-item">
           <p>Books</p>
         </li>
         <li className="nav-item">
