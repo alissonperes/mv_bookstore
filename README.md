@@ -1,4 +1,4 @@
-# Building a simple calculator APP with React
+# Building a simple Bookstore APP with React
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
